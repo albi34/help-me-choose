@@ -1,3 +1,2 @@
 # help-me-choose
-
-a [Sails](http://sailsjs.org) application
+A tiny embed-able web app to help you choose between stuff!
