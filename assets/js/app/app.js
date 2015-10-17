@@ -1,3 +1,3 @@
 import Hello from "components/hello";
 
-console.log('Webpack');
+console.log('Webpack Web Server ! ');
