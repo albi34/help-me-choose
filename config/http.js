@@ -33,6 +33,8 @@ module.exports.http = {
   ***************************************************************************/
 
     order: [
+      'webpackDev',
+      'webpackHot',
       'startRequestTimer',
       'cookieParser',
       'session',
@@ -42,8 +44,6 @@ module.exports.http = {
       'compress',
       'methodOverride',
       'poweredBy',
-      'webpackDev',
-      'webpackHot',
       '$custom',
       'router',
       'www',
