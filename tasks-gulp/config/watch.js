@@ -13,7 +13,7 @@
 
 livereload = require('gulp-livereload');
 module.exports = function(gulp, plugins, growl) {
-	livereload.listen();
+	livereload.listen(35733);
 	gulp.task('watch:api', function() {
 		// Watch Style files
 		return gulp.watch('api/**/*', ['syncAssets'])
@@ -22,7 +22,7 @@ module.exports = function(gulp, plugins, growl) {
 
 	gulp.task('watch:assets', function() {
 		// Watch assets
-		return gulp.watch(['assets/**/*', 'tasks/pipeline.js'], ['syncAssets'])
+		return gulp.watch(['assets/**/*', 'tasks-gulp/pipeline.js'], ['syncAssets'])
 				.on('change', livereload.changed);
 	});
 

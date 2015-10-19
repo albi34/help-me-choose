@@ -3,15 +3,17 @@ var path = require('path');
 
 module.exports = {
 	entry: {
-		main: ['webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server','app']
+		main: [  'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true', 'index']
 	},
 	output: {
-		path:  path.resolve("./.tmp/public/"),
+		path: "/",
 		filename:  "bundle.js",
-		publicPath: './.tmp/public/'
+		publicPath:"http://localhost:1337/"
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
 	],
 	resolve: {
 		extensions: ['', '.js', '.jsx'],

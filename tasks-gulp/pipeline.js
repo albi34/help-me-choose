@@ -31,6 +31,16 @@ var jsFilesToInject = [
 
 ];
 
+// Since we have a hot reloading server, we don't need to resync the bundle.js
+var jsSyncFilesToInject = [
+
+  // Load sails.io before everything else
+  'js/dependencies/sails.io.js',
+
+  // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/**/*.js'
+
+];
 
 var allFilesToInject = [
     '.tmp/public/js/dependencies/sails.io.js',
@@ -61,6 +71,9 @@ module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
   return '.tmp/public/' + path;
 });
 module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
+  return '.tmp/public/' + path;
+});
+module.exports.jsSyncFilesToInject = jsSyncFilesToInject.map(function(path) {
   return '.tmp/public/' + path;
 });
 

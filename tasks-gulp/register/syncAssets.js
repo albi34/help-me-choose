@@ -7,7 +7,6 @@ module.exports = function (gulp, plugins) {
 			// 'sync:dev',
 			// 'coffee:dev',
 			'compileAssets',
-			'webpack',
 			'images',
 			'linkAssets',
 			cb

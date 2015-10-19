@@ -18,11 +18,12 @@ module.exports = function(gulp, plugins, growl) {
     myConfig.devtool = "eval";
     myConfig.debug = true;
     new WebpackDevServer(webpack(myConfig), {
-		 publicPath: "/" + myConfig.output.publicPath,
-        hot: true,
+      publicPath:  myConfig.output.publicPath,
+      hot: true,
       stats: {
-  			colors: true
-  		}
+        colors: true
+      },
+      headers: { 'Access-Control-Allow-Origin': '*' }
     }).listen(8080, "localhost", function(err) {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
         // Server listening
